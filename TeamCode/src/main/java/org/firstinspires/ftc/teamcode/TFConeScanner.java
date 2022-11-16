@@ -70,7 +70,7 @@ public class TFConeScanner extends LinearOpMode {
      *  FreightFrenzy_BC.tflite  0: Ball,  1: Cube
      *  FreightFrenzy_DM.tflite  0: Duck,  1: Marker
      */
-    private static final String TFOD_MODEL_ASSET = "FreightFrenzy_BCDM.tflite"; //TODO: change the file to our file
+    private static final String TFOD_MODEL_ASSET = "model_unquant.tflite"; //TODO: change the file to our file
     private static final String[] LABELS = {
             "A",
             "B",
@@ -144,11 +144,11 @@ public class TFConeScanner extends LinearOpMode {
 
                         int i = 0;
                         for (Recognition recognition : updatedRecognitions) {
-//                            telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
-//                            telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
-//                                    recognition.getLeft(), recognition.getTop());
-//                            telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
-//                                    recognition.getRight(), recognition.getBottom());
+                            telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
+                            telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
+                                    recognition.getLeft(), recognition.getTop());
+                            telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
+                                    recognition.getRight(), recognition.getBottom());
 
 
                             //get the most confident output from the recognised numbers this pass

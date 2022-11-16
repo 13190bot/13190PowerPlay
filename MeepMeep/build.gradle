@@ -24,5 +24,6 @@ repositories {
 }
 
 dependencies {
+    implementation project(path: ':TeamCode')
     implementation 'com.github.NoahBres:MeepMeep:2.0.2'
 }
